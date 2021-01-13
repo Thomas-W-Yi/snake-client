@@ -1,21 +1,22 @@
 // const { connect } = require('./client');
 let connection;
-let cannedMsg = ['myPrecious', 'uShallNotPass', 'pissOff'];
+const { cannedMsg, moves } = require('./constants');
+
 const handleUserInput = (key) => {
   if (key === '\u0003') {
     process.exit();
   } else if (key === 'w') {
-    connection.write("Move: up");
+    connection.write(moves[0]);
   } else if (key === 'a') {
 
-    connection.write("Move: left");
+    connection.write(moves[1]);
   } else if (key === 's') {
     
-    connection.write("Move: down");
+    connection.write(moves[2]);
  
   } else if (key === 'd') {
     
-    connection.write("Move: right");
+    connection.write(moves[3]);
 
   } else if (key === '1') {
     connection.write(`Say: ${cannedMsg[0]}`);
