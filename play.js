@@ -13,4 +13,4 @@ conn.on('connect', () => {
   
 });
 
-setupInput();
+setupInput(conn);
