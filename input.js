@@ -1,6 +1,6 @@
 // const { connect } = require('./client');
 let connection;
-
+let cannedMsg = ['myPrecious', 'uShallNotPass', 'pissOff'];
 const handleUserInput = (key) => {
   if (key === '\u0003') {
     process.exit();
@@ -11,12 +11,18 @@ const handleUserInput = (key) => {
     connection.write("Move: left");
   } else if (key === 's') {
     
-    connection.write("Move: dowan");
+    connection.write("Move: down");
  
   } else if (key === 'd') {
     
     connection.write("Move: right");
 
+  } else if (key === '1') {
+    connection.write(`Say: ${cannedMsg[0]}`);
+  } else if (key === '2') {
+    connection.write(`Say: ${cannedMsg[1]}`);
+  } else if (key === '3') {
+    connection.write(`Say: ${cannedMsg[2]}`);
   }
 };
 const setupInput = function(conn) {
