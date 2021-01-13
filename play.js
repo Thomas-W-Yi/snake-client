@@ -1,4 +1,13 @@
 const { connect } = require('./client');
 
 console.log('Connecting ...');
-connect();
+let conn = connect();
+conn.on('connect', () => {
+  // setTimeout(() => {
+  //   conn.write("Move: up");
+  // }, 50);
+  // setInterval(() => {
+  //   conn.write("Move: up");
+  // }, 50);
+  
+});
